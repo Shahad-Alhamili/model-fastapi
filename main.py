@@ -4,6 +4,7 @@ from gradio_client import Client, handle_file
 app = FastAPI()
 client = Client("shahad-alh/Arabi_char_classifier")
 
+@app.post("/classify")
 def classify_image(file: UploadFile = File(...)):
     # Saving the uploaded image temporarily
     temp_path = f"temp_{file.filename}"
