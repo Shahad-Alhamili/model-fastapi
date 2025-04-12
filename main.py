@@ -14,8 +14,6 @@ async def classify_image(file: UploadFile = File(...)):
         return {"error": str(e)}
 
     return {"prediction": prediction}
-app = FastAPI()
-
 
 @app.get("/")
 async def root():
